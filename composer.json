@@ -1,6 +1,6 @@
 {
     "name": "logifire/naive-middleware",
-    "description": "PSR-15 middleware implementation",
+    "description": "PSR-15 request handler implementation",
     "license": "MIT",
     "require": {
         "php": "^7.2",
