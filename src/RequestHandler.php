@@ -28,7 +28,7 @@ class RequestHandler implements RequestHandlerInterface
         $this->response_factory = $response_factory;
     }
 
-    public function addMiddleware(MiddlewareInterface $middleware)
+    public function addMiddleware(MiddlewareInterface $middleware): void
     {
         $this->middlewares[] = $middleware;
     }
