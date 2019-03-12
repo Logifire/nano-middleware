@@ -1,7 +1,6 @@
 <?php
-namespace NaiveMiddleware\Tests;
+namespace NanoMiddleware\Tests;
 
-use Nyholm\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;

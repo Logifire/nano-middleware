@@ -1,5 +1,5 @@
 <?php
-namespace NaiveMiddleware;
+namespace NanoMiddleware;
 
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;

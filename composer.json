@@ -1,5 +1,5 @@
 {
-    "name": "logifire/naive-middleware",
+    "name": "logifire/nano-middleware",
     "description": "PSR-15 request handler implementation",
     "license": "MIT",
     "require": {
@@ -10,12 +10,12 @@
     },
     "autoload": {
         "psr-4": {
-            "NaiveMiddleware\\": "src/"
+            "NanoMiddleware\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": { 
-            "NaiveMiddleware\\Tests\\": "tests/" 
+            "NanoMiddleware\\Tests\\": "tests/" 
         }
     },
     "require-dev": {

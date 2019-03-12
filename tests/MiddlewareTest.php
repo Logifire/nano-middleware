@@ -1,7 +1,7 @@
 <?php
+namespace NanoMiddleware\Tests;
 
-use NaiveMiddleware\RequestHandler;
-use NaiveMiddleware\Tests\MockMiddleware;
+use NanoMiddleware\RequestHandler;
 use Nyholm\Psr7\Factory\Psr17Factory;
 use Nyholm\Psr7\ServerRequest;
 use PHPUnit\Framework\TestCase;
