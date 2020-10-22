@@ -23,6 +23,6 @@
         "nyholm/psr7": "1.0.1"
     },
     "provide": {
-        "psr/http-server-handler": "^1.0"
+        "psr/http-server-handler-implementation": "1.0"
     }
 }
