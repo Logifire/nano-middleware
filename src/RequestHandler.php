@@ -1,6 +1,8 @@
 <?php
+
 namespace NanoMiddleware;
 
+use OutOfRangeException;
 use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
@@ -10,23 +12,10 @@ use Psr\Http\Server\RequestHandlerInterface;
 class RequestHandler implements RequestHandlerInterface
 {
 
-    public const STATUS_CODE = 500;
-    public const REASON_PHRASE = 'Missing middleware handling';
-
-    /**
-     * @var ResponseFactoryInterface
-     */
-    private $response_factory;
-
     /**
      * @var MiddlewareInterface[]
      */
-    private $middlewares = [];
-
-    public function __construct(ResponseFactoryInterface $response_factory)
-    {
-        $this->response_factory = $response_factory;
-    }
+    private array $middlewares = [];
 
     public function addMiddleware(MiddlewareInterface $middleware): void
     {
@@ -37,13 +26,16 @@ class RequestHandler implements RequestHandlerInterface
     {
         $middleware = current($this->middlewares);
 
-        if ($middleware !== false) {
-            next($this->middlewares);
-            $response = $middleware->process($request, $this);
-        } else {
-            $response = $this->response_factory->createResponse(self::STATUS_CODE, self::REASON_PHRASE);
+        if ($middleware === false) {
+            throw new OutOfRangeException('Middleware is missing, usually this should be the application middleware.');
         }
 
+        next($this->middlewares);
+
+        // Recursive call through the middleware stack
+        $response = $middleware->process($request, $this);
+
+        // If used in a long running application, reset the pointer.
         reset($this->middlewares);
 
         return $response;
