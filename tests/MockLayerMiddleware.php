@@ -6,7 +6,7 @@ use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\MiddlewareInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 
-class MockMiddleware implements MiddlewareInterface
+class MockLayerMiddleware implements MiddlewareInterface
 {
 
     public static $count = 0;
