@@ -3,7 +3,7 @@
     "description": "PSR-15 request handler implementation",
     "license": "MIT",
     "require": {
-        "php": "^8.4",
+        "php": ">=8.4",
         "psr/http-server-middleware": "^1.0",
         "psr/http-server-handler": "^1.0",
         "psr/http-message": "^1.0"
